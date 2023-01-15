@@ -12,12 +12,9 @@ const Dashboard = (props) => {
             withCredentials: true,
             url: "http://localhost:3001/isAuth",
           }).then(response => {
-            console.log("Inside useEffect");
-        console.log(response.data);
         if(response.data) {
             setLoggedIn(true); 
           }else{
-              console.log(props.history);
               props.history.push('/');
           }
         }).catch(error =>{
@@ -39,8 +36,6 @@ const Dashboard = (props) => {
         });
         
     }
-
-   
 
     return(
         <div>
